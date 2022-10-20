@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>New Password Generator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="titles">
+                <h1>Generate a</h1>
+                <h1 id="greenHeading">random password</h1>
+                <h3>Never use an insecure password again.</h3>
+            </div>
+            <div class="attributes">
+                <p>Password attributes:</p>
+                <p id="labelPasswordLength">Length: 15</p>
+                <input class="numberSlider" id="passwordLength" type="range" min="10" max="15" step="1" value="15" oninput="updateLabel('length')">
+                <div></div>
+                <input id="numberCheck" type="checkbox" checked>
+                <label for="numberCheck">Numbers</label>
+                <div></div>
+                <input id="letterCheck" type="checkbox" checked>
+                <label for="letterCheck">Letters</label>
+                <div></div>
+                <input id="symbolCheck" type="checkbox" checked>
+                <label for="symbolCheck">Symbols</label>
+                <div></div>
+                <input id="uniqueCheck" type="checkbox" checked>
+                <label for="uniqueCheck">No repeated characters</label>
+            </div>
+            <button onclick="generatePasswords()">Generate passwords</button>
+            <div class="divider"></div>
+            <div class="passwords">
+                <button class="passwordButton" id="passwordButtonOne" onclick="copyPassword(1)">...</button>
+                <button class="passwordButton" id="passwordButtonTwo" onclick="copyPassword(2)">...</button>
+            </div>
+            <script src="index.js"></script>
+        </div>
+    </body>
+</html>
