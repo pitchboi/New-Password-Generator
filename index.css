@@ -1,4 +1,176 @@
+:root {
+    --button-depressed-colour: rgb(63, 192, 127);
+    --button-hovered-colour: rgb(70, 219, 145);
+    --button-pressed-colour: rgb(18, 68, 43);
+    --button-current-colour: var(--button-depressed-colour);
+}
+
 * {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
     margin: 0;
     padding: 0;
+}
+
+body {
+    background: rgb(23, 32, 61);
+}
+
+.wrapper {
+    width: 100%;
+}
+
+.divider {
+    background-color: rgba(180, 180, 180, 0.329);
+
+    width: 80%;
+    height: 3px;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10%;
+}
+
+.wrapper button {
+    background: var(--button-current-colour);
+    color: white;
+
+    font-size: 25px;
+
+    width: 90%;
+
+    margin: 10px;
+    padding: 12px;
+
+    border: none;
+    border-radius: 5px;
+}
+
+.titles {
+    text-align: center;
+
+    width: 100%
+}
+
+.titles h1 {
+    color: white;
+
+    font-size: 40px;
+
+    padding-top: 10px;
+}
+
+.titles h3 {
+    color: rgb(158, 158, 158);
+
+    font-size: 20px;
+
+    margin: 0px 10px 0px;
+    padding-bottom: 10px;
+}
+
+.attributes {
+    text-align: center;
+
+    width: 100%
+}
+
+.attributes p {
+    color: rgb(207, 207, 207);
+
+    font-size: 25px;
+}
+
+.attributes label {
+    color: rgb(207, 207, 207);
+
+    font-size: 30px;
+}
+
+.generateButton {
+    text-align: center;
+
+    width: 100%;
+
+    padding-top: 20px;
+}
+
+.passwords {
+    text-align: center;
+
+    width: 100%
+}
+
+.numberSlider {
+    width: 80%;
+    margin-top: 5px;
+}
+
+.wrapper .passwordButton {
+    background: rgba(180, 180, 180, 0.329);
+
+    color:rgb(63, 192, 127);
+}
+
+.footer {
+    text-align: center;
+}
+
+.footer p {
+    color: rgba(255, 255, 255, 0.5);
+
+    margin: 20px;
+}
+
+#greenHeading {
+    color: rgb(63, 192, 127);
+
+    padding-top: 0px;
+    padding-bottom: 10px;
+}
+
+#subtitle {
+    font-size: 30px;
+
+    margin-bottom: 3px;
+}
+
+#labelPasswordLength {
+    padding-top: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+    .wrapper button {
+        font-size: 25px;
+
+        width: 500px;
+    }
+
+    .divider {
+        width: 60%;
+
+        margin-left: 20%;
+    }
+
+    .numberSlider {
+        width: 350px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .wrapper button {
+        width: 400px;
+    }
+
+    .divider {
+        width: 40%;
+
+        margin-left: 30%;
+    }
+
+    .footer {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+    }
 }

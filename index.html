@@ -15,27 +15,34 @@
                 <h3>Never use an insecure password again.</h3>
             </div>
             <div class="attributes">
-                <p>Password attributes:</p>
+                <p id="subtitle">Password attributes:</p>
                 <p id="labelPasswordLength">Length: 15</p>
                 <input class="numberSlider" id="passwordLength" type="range" min="10" max="15" step="1" value="15" oninput="updateLabel('length')">
                 <div></div>
-                <input id="numberCheck" type="checkbox" checked>
+                <input class="checkbox" id="numberCheck" type="checkbox" checked>
                 <label for="numberCheck">Numbers</label>
                 <div></div>
-                <input id="letterCheck" type="checkbox" checked>
+                <input class="checkbox" id="letterCheck" type="checkbox" checked>
                 <label for="letterCheck">Letters</label>
                 <div></div>
-                <input id="symbolCheck" type="checkbox" checked>
+                <input class="checkbox" id="symbolCheck" type="checkbox" checked>
                 <label for="symbolCheck">Symbols</label>
                 <div></div>
-                <input id="uniqueCheck" type="checkbox" checked>
+                <input class="checkbox" id="uniqueCheck" type="checkbox" checked>
                 <label for="uniqueCheck">No repeated characters</label>
             </div>
-            <button onclick="generatePasswords()">Generate passwords</button>
+            <div class="generateButton">
+                <button onclick="generatePasswords()" onmousedown="changeButtonColour(1)" onmouseup="changeButtonColour(2)" onmouseenter="changeButtonColour(3)" onmouseleave="changeButtonColour(4)">Generate passwords</button>
+            </div>
             <div class="divider"></div>
             <div class="passwords">
                 <button class="passwordButton" id="passwordButtonOne" onclick="copyPassword(1)">...</button>
+            </div>
+            <div class="passwords">
                 <button class="passwordButton" id="passwordButtonTwo" onclick="copyPassword(2)">...</button>
+            </div>
+            <div class = "footer">
+                <p>© Tristyn Kelley 2022</p>
             </div>
             <script src="index.js"></script>
         </div>
