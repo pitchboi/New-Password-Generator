@@ -32,14 +32,14 @@
                 <label for="uniqueCheck">No repeated characters</label>
             </div>
             <div class="generateButton">
-                <button onclick="generatePasswords()" onmousedown="changeButtonColour(1)" onmouseup="changeButtonColour(2)" onmouseenter="changeButtonColour(3)" onmouseleave="changeButtonColour(4)">Generate passwords</button>
+                <button onclick="generatePasswords()" onmousedown="changeButtonColour('generate',1)" onmouseup="changeButtonColour('generate',2)" onmouseenter="changeButtonColour('generate',3)" onmouseleave="changeButtonColour('generate',4)">Generate passwords</button>
             </div>
             <div class="divider"></div>
             <div class="passwords">
-                <button class="passwordButton" id="passwordButtonOne" onclick="copyPassword(1)">...</button>
+                <button class="passwordButton" id="passwordButtonOne" onclick="copyPassword(1)" onmousedown="changeButtonColour('password',1)" onmouseup="changeButtonColour('password',2)" onmouseenter="changeButtonColour('password',3)" onmouseleave="changeButtonColour('password',4)">...</button>
             </div>
             <div class="passwords">
-                <button class="passwordButton" id="passwordButtonTwo" onclick="copyPassword(2)">...</button>
+                <button class="passwordButton" id="passwordButtonTwo" onclick="copyPassword(2)" onmousedown="changeButtonColour('password',1)" onmouseup="changeButtonColour('password',2)" onmouseenter="changeButtonColour('password',3)" onmouseleave="changeButtonColour('password',4)">...</button>
             </div>
             <div class = "footer">
                 <p>© Tristyn Kelley 2022</p>

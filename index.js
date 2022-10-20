@@ -23,22 +23,37 @@ elPasswordLength.value = 15;
 
 /**************** FUNCTIONS ****************/
 // Change button colour
-function changeButtonColour(pressLevel) {
-    cssRoot.style.setProperty('--button-current-colour', cssRootStyle.getPropertyValue('--button-pressed-colour'));
+function changeButtonColour(buttonType, pressLevel) {
     console.log(pressLevel);
 
     switch (pressLevel) {
         case 1: // Pressed/Clicked
-            cssRoot.style.setProperty('--button-current-colour', cssRootStyle.getPropertyValue('--button-pressed-colour'));
+            if (buttonType === "generate") {
+                cssRoot.style.setProperty('--generate-button-current-colour', cssRootStyle.getPropertyValue('--generate-button-pressed-colour'));
+            } else { // password button
+                //cssRoot.style.setProperty('--password-button-current-colour', cssRootStyle.getPropertyValue('--password-button-pressed-colour'));
+            }
             break;
         case 2: // De-pressed/Unclicked
-            cssRoot.style.setProperty('--button-current-colour', cssRootStyle.getPropertyValue('--button-depressed-colour'));
+            if (buttonType === "generate") {
+                cssRoot.style.setProperty('--generate-button-current-colour', cssRootStyle.getPropertyValue('--generate-button-depressed-colour'));
+            } else { // password button
+                //cssRoot.style.setProperty('--password-button-current-colour', cssRootStyle.getPropertyValue('--password-button-depressed-colour'));
+            }
             break;
         case 3: // Hovered over
-            cssRoot.style.setProperty('--button-current-colour', cssRootStyle.getPropertyValue('--button-hovered-colour'));
+            if (buttonType === "generate") {
+                cssRoot.style.setProperty('--generate-button-current-colour', cssRootStyle.getPropertyValue('--generate-button-hovered-colour'));
+            } else { // password button
+                //cssRoot.style.setProperty('--password-button-current-colour', cssRootStyle.getPropertyValue('--password-button-hovered-colour'));
+            }
             break;
         case 4: // Unhovered over
-            cssRoot.style.setProperty('--button-current-colour', cssRootStyle.getPropertyValue('--button-depressed-colour'));
+            if (buttonType === "generate") {
+                cssRoot.style.setProperty('--generate-button-current-colour', cssRootStyle.getPropertyValue('--generate-button-depressed-colour'));
+            } else { // password button
+                //cssRoot.style.setProperty('--password-button-current-colour', cssRootStyle.getPropertyValue('--password-button-depressed-colour'));
+            }
             break;
     }
 }
