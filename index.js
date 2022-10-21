@@ -8,6 +8,7 @@ let cssRootStyle = getComputedStyle(cssRoot);
 let characters = [];
 let passwords = [];
 let passwordQuantity = 2;
+let passwordLength = 0;
 
 let elLabelPasswordLength = document.getElementById("labelPasswordLength");
 let elPassOne = document.getElementById("passwordButtonOne");
@@ -110,13 +111,33 @@ function updateLabel(labelName) {
     }
 }
 
+// Password Rules
+function passwordRules() {
+    let passed = true;
+
+    if (elNumberCheck.checked === false && elLetterCheck.checked === false && elSymbolCheck.checked === false) {
+        passed = false;
+        alert('Must check at least one criteria.');
+    } else if (passwordLength > 10 && elUniqueCheck.checked === true && elLetterCheck.checked === false && elSymbolCheck.checked === false) {
+        passed = false;
+        alert('Cannot have only numbers and "no repeated characters" enabled with a password length greater than 10.');
+    }
+
+    return passed;
+}
+
 // Initial function to run when the "Generate Passwords" button is pressed
 function generatePasswords() {
     // Set variable properties
-    passwordLength = elPasswordLength.value
+    passwordLength = elPasswordLength.value;
 
     // Reset the array of passwords
     passwords.length = 0;
+
+    // Make sure it passes the rules
+    if (!passwordRules()) {
+        return;
+    }
 
     // Set legal characters
     if (!createCharactersArray()) {
@@ -128,6 +149,8 @@ function generatePasswords() {
     for (i = 1; i <= passwordQuantity; i++) {
         // Add new password to array (and call the procedure that creates the password)
         passwords.push(makePassword());
+        // Re-make passwords array
+        createCharactersArray()
     }
 
     // Assign the passwords to their respective button
