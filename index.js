@@ -2,22 +2,22 @@ const charLetters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"
 const charNumbers = ["0","1","2","3","4","5","6","7","8","9"]
 const charSymbols = ["~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?","/"]
 
-let cssRoot = document.querySelector(":root");
-let cssRootStyle = getComputedStyle(cssRoot);
+const cssRoot = document.querySelector(":root");
+const cssRootStyle = getComputedStyle(cssRoot);
+
+const elLabelPasswordLength = document.getElementById("labelPasswordLength");
+const elPassOne = document.getElementById("passwordButtonOne");
+const elPassTwo = document.getElementById("passwordButtonTwo");
+const elPasswordLength = document.getElementById("passwordLength");
+const elNumberCheck = document.getElementById("numberCheck");
+const elLetterCheck = document.getElementById("letterCheck");
+const elSymbolCheck = document.getElementById("symbolCheck");
+const elUniqueCheck = document.getElementById("uniqueCheck");
 
 let characters = [];
 let passwords = [];
 let passwordQuantity = 2;
 let passwordLength = 0;
-
-let elLabelPasswordLength = document.getElementById("labelPasswordLength");
-let elPassOne = document.getElementById("passwordButtonOne");
-let elPassTwo = document.getElementById("passwordButtonTwo");
-let elPasswordLength = document.getElementById("passwordLength");
-let elNumberCheck = document.getElementById("numberCheck");
-let elLetterCheck = document.getElementById("letterCheck");
-let elSymbolCheck = document.getElementById("symbolCheck");
-let elUniqueCheck = document.getElementById("uniqueCheck");
 
 // Set page defaults
 elPasswordLength.value = 15;
