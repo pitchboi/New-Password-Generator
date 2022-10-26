@@ -109,6 +109,20 @@ function updateLabel(labelName) {
             elLabelPasswordLength.textContent = "Length: " + elPasswordLength.value
             break;
     }
+
+    generatePasswords();
+    resizeFont();
+}
+
+// Resize fonts based on password length
+function resizeFont() {
+    if (passwordLength < 21) {
+        cssRoot.style.setProperty('--password-button-font-size', '25px');
+    } else if (passwordLength < 27) {
+        cssRoot.style.setProperty('--password-button-font-size', '20px');
+    } else {
+        cssRoot.style.setProperty('--password-button-font-size', '17px');
+    }
 }
 
 // Password Rules
@@ -121,6 +135,9 @@ function passwordRules() {
     } else if (passwordLength > 10 && elUniqueCheck.checked === true && elLetterCheck.checked === false && elSymbolCheck.checked === false) {
         passed = false;
         alert('Cannot have only numbers and "no repeated characters" enabled with a password length greater than 10.');
+    } else if (passwordLength > 29 && elUniqueCheck.checked === true && elNumberCheck.checked === false && elLetterCheck.checked === false) {
+        passed = false;
+        alert('Cannot have only symbols and "no repeated characters" enabled with a password length greater than 29.');
     }
 
     return passed;

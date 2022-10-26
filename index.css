@@ -7,6 +7,7 @@
     --password-button-hovered-colour: rgba(180, 180, 180, 0.63);
     --password-button-pressed-colour: rgba(180, 180, 180, 0.116);
     --password-button-current-colour: var(--password-button-depressed-colour);
+    --password-button-font-size: 25px;
 }
 
 * {
@@ -18,6 +19,10 @@
 
 body {
     background: rgb(23, 32, 61);
+}
+
+button {
+    touch-action: manipulation;
 }
 
 .wrapper {
@@ -42,9 +47,14 @@ body {
     font-size: 25px;
 
     width: 90%;
+    height: 58px;
 
     margin: 10px;
-    padding: 12px;
+
+    padding: 0px 10px;
+
+    white-space: normal;
+    word-wrap: break-word;
 
     border: none;
     border-radius: 5px;
@@ -115,6 +125,8 @@ body {
     background: var(--password-button-current-colour);
 
     color:rgb(63, 192, 127);
+
+    font-size: var(--password-button-font-size);
 }
 
 .footer {
@@ -166,7 +178,7 @@ body {
     .wrapper button {
         font-size: 20px;
 
-        width: 250px;
+        width: 300px;
     }
 
     .divider {
