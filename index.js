@@ -116,9 +116,9 @@ function updateLabel(labelName) {
 
 // Resize fonts based on password length
 function resizeFont() {
-    if (passwordLength < 21) {
+    if (passwordLength < 19) {
         cssRoot.style.setProperty('--password-button-font-size', '25px');
-    } else if (passwordLength < 27) {
+    } else if (passwordLength < 24) {
         cssRoot.style.setProperty('--password-button-font-size', '20px');
     } else {
         cssRoot.style.setProperty('--password-button-font-size', '17px');
